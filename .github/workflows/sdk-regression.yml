@@ -12,24 +12,6 @@ jobs:
         # Format: repo@branch (default branch is master)
         repo: 
           - percy-ember
-          - percy-cypress
-          - percy-puppeteer
-          - percy-storybook
-          - percy-playwright
-          - percy-testcafe
-          - percy-nightwatch
-          - percy-nightmare
-          - percy-webdriverio
-          - percy-webdriverio@v2
-          - percy-protractor
-          - percy-selenium-js
-          - percy-selenium-dotnet
-          - percy-selenium-java
-          - percy-selenium-python
-          - percy-selenium-ruby@main
-          - percy-capybara
-          - percy-appium-js
-          - gatsby-plugin-percy
     steps:
       - uses: xt0rted/pull-request-comment-branch@v2
         if: ${{ github.event.issue.pull_request }}
@@ -69,7 +51,7 @@ jobs:
         uses: convictional/trigger-workflow-and-wait@v1.6.5
         id: reg-test
         with:
-          owner: percy
+          owner: saffronhone
           repo: ${{ steps.split.outputs._0 }}
           github_token: ${{ secrets.WORKFLOW_DISPATCH_ACTIONS_TOKEN }}
           workflow_file_name: test.yml
